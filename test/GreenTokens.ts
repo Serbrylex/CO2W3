@@ -47,17 +47,12 @@ describe("GreenTokens", function () {
       // Creamos una instancia del contrato ERC 1155 desplegado dinamicamente
       const baseToken = new ethers.Contract(project.tokens, myJson.abi, ethers.provider)
 
-      console.log(baseToken)
-
       // Obtenemos la uri del json con la metadata
-      const uri = await baseToken.uri(0)
-      console.log(uri)
+      const uri = await baseToken.uri(0)      
 
       // Obtenemos el balance del owner con respecto a los dos tipos de tokens
-      const NFT = await baseToken.functions.balanceOf(owner.address, 0)
-      console.log('NFT', NFT[0])
-      const Token = await baseToken.functions.balanceOf(owner.address, 1)
-      console.log('Token', Token[0])
+      const NFT = await baseToken.functions.balanceOf(owner.address, 0)      
+      const Token = await baseToken.functions.balanceOf(owner.address, 1)      
 
       // Validamos que el maxSupply sea el establecido
       expect(Token[0]).to.equal(ethers.BigNumber.from("2000"));
