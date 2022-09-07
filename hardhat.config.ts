@@ -9,11 +9,8 @@ const { ROBSTEN_RPC_URL, PRIVATE_KEY, API_KEY } = process.env;
 // Una vez desplegado, entramos a rinkeby.etherscan y desplegamos una interfaz
 // npx hardhat flatten > Flattened.sol
 
-const config: HardhatUserConfig = {
-  solidity: "0.8.7",
-  paths: {
-    artifacts: './frontend/src/artifacts'
-  },
+module.exports = {
+  solidity: "0.8.7",  
   networks: {
     goerli: {
       url: `https://goerli.infura.io/v3/${ROBSTEN_RPC_URL}`,
@@ -26,5 +23,3 @@ const config: HardhatUserConfig = {
     apiKey: API_KEY as string
   }
 };
-
-export default config;

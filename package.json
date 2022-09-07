@@ -6,13 +6,14 @@
   "scripts": {
     "deploy": "npx hardhat run --network goerli scripts/deploy.ts",
     "verify": "npx hardhat verify --network goerli 0xE13048b6e9b1F92a0fFCC661c89306747115D270",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npx hardhat test"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@nomiclabs/hardhat-etherscan": "^3.1.0",
+    "@types/mocha": "^9.1.1",
     "hardhat": "^2.10.2"
   },
   "dependencies": {
